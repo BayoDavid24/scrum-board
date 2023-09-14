@@ -1,58 +1,32 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-function handleDragStart(e) {
-  this.style.opacity = '0.4';
-  
-    dragSrcEl = this;
+  (function() {
+      var dragged, listener;
 
-  e.dataTransfer.effectAllowed = 'move';
-  e.dataTransfer.setData('text/html', this.innerHTML);
-  
-}
+      console.clear();
 
-function handleDragEnd(e) {
-  this.style.opacity = '1';
+      dragged = null;
 
+      listener = document.addEventListener;
 
+      listener("dragstart", (event) => {
+        console.log("start !");
+        return dragged = event.target;
+      });
 
-items.forEach(function (item) {
-      item.classList.remove('over');
-    });
-  }
+      listener("dragend", (event) => {
+        return console.log("end !");
+      });
 
-  function handleDragOver(e) {
-    e.preventDefault();
-    return false;
-  }
+      listener("dragover", function(event) {
+        return event.preventDefault();
+      });
 
-  function handleDragEnter(e) {
-    this.classList.add('over');
-  }
+      listener("drop", (event) => {
+        console.log("drop !");
+        event.preventDefault();
+        if (event.target.className === "dropbox") {
+          dragged.parentNode.removeChild(dragged);
+          return event.target.appendChild(dragged);
+        }
+      });
 
-  function handleDragLeave(e) {
-    this.classList.remove('over');
-  }
-
-  function handleDrop(e) {
-  e.stopPropagation();
-
-  if (dragSrcEl !== this) {
-    dragSrcEl.innerHTML = this.innerHTML;
-    this.innerHTML = e.dataTransfer.getData('text/html');
-  }
-
-  return false;
-}
-
-
-let items = document.querySelectorAll('.board .section .paper');
-items.forEach(function (item) {
-     item.addEventListener('dragstart', handleDragStart);
-    item.addEventListener('dragover', handleDragOver);
-    item.addEventListener('dragenter', handleDragEnter);
-    item.addEventListener('dragleave', handleDragLeave);
-    item.addEventListener('dragend', handleDragEnd);
-      item.addEventListener('drop', handleDrop);
-
-});
-
-});
+    }).call(this);
