@@ -1,3 +1,7 @@
+body{
+  font-family: Monospace;
+}
+
 .board{
   display: flex;
 }
@@ -10,7 +14,8 @@
   background-color: white;
 }
 
-#section0 .paper{
+.paper,#drag1{
+  font-family: Comic Sans MS;
   width: 100px;
   height: 100px;
   background-color: #ffff88;
@@ -25,6 +30,15 @@
   box-shadow: 2px 2px 12px;
   margin: 1px;
 }
+
+#section1-1 .paper{
+  width: 100px;
+  height: 100px;
+  background-color:;
+  border:1px solid;
+  margin: 1px;
+}
+
 
 #section2 .paper{
   width: 100px;
@@ -52,4 +66,12 @@
 
 .paper.over {
   border: 2px dotted #666;
+}
+
+.dropbox{
+  border-radius:8px;
+  border:2px dashed black;
+  width: 300px;
+  height: 400px;
+  background-color:lightgrey;
 }
