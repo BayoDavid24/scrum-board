@@ -23,12 +23,25 @@ body{
   margin: 1px;
 }
 
+#task01{
+  background-color: transparent;
+  width: 95px;
+  height: 70px;
+  border: none;
+  outline: none;
+}
+
+
 #section1 .paper{
   width: 100px;
   height: 100px;
   background-color: #f5d128;
   box-shadow: 2px 2px 12px;
   margin: 1px;
+}
+
+.task-title{
+  
 }
 
 #section1-1 .paper{
