@@ -30,3 +30,13 @@
       });
 
     }).call(this);
+
+    function addpaper(){
+      var newpaper= document.createElement("div")
+      newpaper.className="paper";
+      newpaper.innerHTML ='<div class="task-title"><input id="task-title" placeholder="Task"></div>'+'<div class="task-note"><textarea id="task01" placeholder="...note"></textarea   ></div>';
+      newpaper.draggable = true;    
+
+      document.getElementById("section0").appendChild(newpaper);
+
+    }
