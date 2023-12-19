@@ -35,8 +35,13 @@
       var newpaper= document.createElement("div")
       newpaper.className="paper";
       newpaper.innerHTML ='<div class="task-title"><input id="task-title" placeholder="Task"></div>'+'<div class="task-note"><textarea id="task01" placeholder="...note"></textarea   ></div>';
-      newpaper.draggable = true;    
+      newpaper.draggable = true;  
+
+  
+const nodeList = document.querySelectorAll(".paper");
+document.getElementById("numofpapers").innerHTML = nodeList.length +1;
 
       document.getElementById("section0").appendChild(newpaper);
 
+      
     }
