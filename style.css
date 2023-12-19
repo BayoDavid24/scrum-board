@@ -23,6 +23,16 @@ body{
   margin: 1px;
 }
 
+#task-title{
+  font-family: Comic Sans MS;
+  color:black;
+  background-color: transparent;
+  font-weight:700;
+  border: none;
+  width: 95px;
+  outline: none;
+}
+
 #task01{
   background-color: transparent;
   width: 95px;
